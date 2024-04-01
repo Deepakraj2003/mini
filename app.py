@@ -144,6 +144,7 @@ if submit1:
         improve=response5
         st.write("verify wheather all the detials about you is correctly extracted.If any corrections needed rerun the process else click proceed.")
         st.write("Your Portal id is ",ident,".Please remember it")
+        st.write("Now you can go back !")
         # Get the current date
         current_date = datetime.now().date()+ timedelta(days=7)
 
@@ -172,10 +173,10 @@ if submit1:
         print(data)
         db.put("/user",data["id"],data)
         
-        st.button("Finish")
-        if st.button("Finish"):
-    # Redirect to another page
-            st.markdown('<meta http-equiv="refresh" content="0;URL=http://localhost:3000/">', unsafe_allow_html=True)
+    #     st.button("Finish")
+    #     if st.button("Finish"):
+    # # Redirect to another page
+    #         st.markdown('<meta http-equiv="refresh" content="0;URL=http://localhost:3000/">', unsafe_allow_html=True)
         
     else:
         st.write("Please upload the resume")
