@@ -171,16 +171,17 @@ if submit1:
         }
         print(data)
         db.put("/user",data["id"],data)
-        if submit1:
-            st.button("Finish")
+        
+        st.button("Finish")
+        if st.button("Finish"):
+    # Redirect to another page
+            st.markdown('<meta http-equiv="refresh" content="0;URL=http://localhost:3000/">', unsafe_allow_html=True)
         
     else:
         st.write("Please upload the resume")
 
 
 # After the "Finish" button is clicked, redirect to another page
-if st.button("Finish"):
-    # Redirect to another page
-    st.markdown('<meta http-equiv="refresh" content="0;URL=http://localhost:3000/">', unsafe_allow_html=True)
+
 
 
