@@ -14,9 +14,9 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 db = firebase.FirebaseApplication('https://aidshackathon-default-rtdb.asia-southeast1.firebasedatabase.app/')
 
-def get_gemini_response(input, pdf_content, prompt):
+def get_gemini_response( pdf_content, prompt):
     model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content([input, pdf_content, prompt])
+    response = model.generate_content([ pdf_content, prompt])
     return response.text
 
 def input_pdf_text(uploaded_file):
@@ -92,7 +92,7 @@ if submit1:
     if uploaded_file is not None:
         text = input_pdf_text(uploaded_file)
         for i in range(0,10):
-            response_detials=get_gemini_response(input_text, text, input_prompt_detials)
+            response_detials=get_gemini_response( text, input_prompt_detials)
         res_detials=list(response_detials.split("||"))
         for i in res_detials:
             i.replace(' ','')
@@ -116,7 +116,7 @@ if submit1:
         
        
         for i in range(0,7):
-            response1 = get_gemini_response(input_text, text, input_prompt2)
+            response1 = get_gemini_response( text, input_prompt2)
         st.subheader("The Response is")
         res1=response1
         # print(res1)
@@ -130,15 +130,15 @@ if submit1:
         print(res_detials2)
         # st.write(res1)
         
-        response3=get_gemini_response(input_text, text, input_prompt3)
+        response3=get_gemini_response( text, input_prompt3)
         st.subheader("The strength is")
         st.write(response3)
         strength = response3
-        response4=get_gemini_response(input_text, text, input_prompt4)
+        response4=get_gemini_response( text, input_prompt4)
         st.subheader("The weakness is")
         st.write(response4)
         weakness = response4
-        response5=get_gemini_response(input_text, text, input_prompt5)
+        response5=get_gemini_response( text, input_prompt5)
         st.subheader("The area to improve is")
         st.write(response5)
         improve=response5
