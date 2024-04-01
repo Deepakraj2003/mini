@@ -171,11 +171,12 @@ if submit1:
         }
         print(data)
         db.put("/user",data["id"],data)
+        if submit1:
+            st.button("Finish")
         
     else:
         st.write("Please upload the resume")
-if submit1:
-    st.button("Finish")
+
 
 # After the "Finish" button is clicked, redirect to another page
 if st.button("Finish"):
