@@ -39,7 +39,7 @@ if uploaded_file is not None:
 submit1 = st.button("Tell Me About the Resume")
 
 
-input_prompt_detials="""Note: The domain must be either Fullstack or Data analyst or Data science or Machine Learning or Deep Learning or cloud or testing or cyber security or Android developer or web developer.Pick any one from this as per the person's resume depends on for the domain.
+input_prompt_detials="""Note: The domain must be either Fullstack or Data analyst or Data science or Machine Learning or Deep Learning or cloud or testing or cyber security or Android developer or web developer.Pick any one from this as per the person's resume depends on for the domain.Output formate of domain should follow the note
 Now you are a investigation person and your role is to gather the basic information of the preson like name,role,email id,contact number and response it in a  structure seperated by the symbol || .for example name||role||email id||contact number. 
 Note: The domain must be either Fullstack or Data analyst or Data science or Machine Learning or Deep Learning or cloud or testing or cyber security.Pick anyone from this as per the person's resume depends on"""
 input_prompt2="""
