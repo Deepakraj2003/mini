@@ -174,5 +174,12 @@ if submit1:
         
     else:
         st.write("Please upload the resume")
+if submit1:
+    st.button("Finish")
+
+# After the "Finish" button is clicked, redirect to another page
+if st.button("Finish"):
+    # Redirect to another page
+    st.markdown('<meta http-equiv="refresh" content="0;URL=http://localhost:3000/">', unsafe_allow_html=True)
 
 
