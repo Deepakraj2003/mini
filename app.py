@@ -40,7 +40,7 @@ submit1 = st.button("Tell Me About the Resume")
 
 
 input_prompt_detials="""Note: The domain must be either Fullstack or Data analyst or Data science or Machine Learning or Deep Learning or cloud or testing or cyber security or Android developer or web developer.Pick any one from this as per the person's resume depends on for the domain.Output formate of domain should follow the note
-Now you are a investigation person and your role is to gather the basic information of the preson like name,role,email id,contact number and response it in a  structure seperated by the symbol || .for example name||role||email id||contact number. 
+Now you are a investigation person and your role is to gather the basic information of the preson like name,role,email id,contact number and response it in a  structure seperated by the symbol || .for example name||role||email id||contact number.Make sure this data is abstracted correctly.Give top priority to name and mail id.
 Note: The domain must be either Fullstack or Data analyst or Data science or Machine Learning or Deep Learning or cloud or testing or cyber security.Pick anyone from this as per the person's resume depends on"""
 input_prompt2="""
 read and make the response properly for below statement
@@ -75,7 +75,7 @@ response it in the dictionary formate. for example { key1:value1,key2:value2....
 11. Top 5 Courses/Certifications Titles: list of top 5 courses/certifications titles that the candidate took (Example: [Course1, Course2, Course3, Course4, Course5])
 12. Current Residence: where the candidate currently live
 13. Suitable Position: classify to one of the following suitable positions for the candidate (suitable position for the candidate)
-14. Candidate Rating (Out of 10): rate the candidate suitability for the classified position in point 15 .(Example: 7.1 or 3.8 etc...).It is necessary to rate the candidate by only using the all above information gained.
+14. Candidate Rating (range of 1 to 10): rate the candidate suitability for the classified position in point 15 .(Example: 7.1 or 3.8 etc...).It is necessary to rate the candidate by only using the all above information gained.
 
 response it in the dictionary formate. for example { key1:value1,key2:value2.....}
 Desired Output: 
@@ -91,7 +91,7 @@ Note: if any of the information is not mentioned in the cv, dont show it in the 
 if submit1:
     if uploaded_file is not None:
         text = input_pdf_text(uploaded_file)
-        for i in range(0,10):
+        for i in range(0,7):
             response_detials=get_gemini_response( text, input_prompt_detials)
         res_detials=list(response_detials.split("||"))
         for i in res_detials:
@@ -183,6 +183,3 @@ if submit1:
 
 
 # After the "Finish" button is clicked, redirect to another page
-
-
-
